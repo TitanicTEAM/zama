@@ -7323,7 +7323,7 @@ local text =  [[
 send(msg.chat_id_, msg.id_, 1, text, 1, 'md')
 end end
 ------------------SOURCE KEEPER---------------------------------------------------
-if text:match("^السورس$") or text:match("^مطور السورس$") or text:match("^ياسورس$") or  text:match("^سورس الزعامه$") or text:match("^اريد سورس$") then
+if text:match("^456$") or text:match("^5454$") or text:match("^54654$") or  text:match("^سورس الزعامه$") or text:match("^4564$") then
 if not redis:get(KEEPER..'lock:add'..msg.chat_id_) then
 local text =  [[
 ‏
