@@ -6,7 +6,7 @@ _  __  _____   _____   ____    _____   ____
 | . \  | |___  | |___  |  __/  | |___  |
 |_|\_\ |_____| |_____| |_|     |_____| |_| \_\
 تم كتابه وبرمجة السورس بوسطه المطور
-القيصر كرارWRITING THE SOURCE BY : @LLX8XLL
+شهاب الرشيد THE SOURCE BY : @shahab0fbi
 
 WRITING THE SOURCE BY : @shahab0fbi
 CH SOURCE : @zamafbi
