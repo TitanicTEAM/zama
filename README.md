@@ -1,12 +1,12 @@
 # <p align="center" style="color:#cb3349" > ســــــورس الزعامه 🍃
-# <p align="center" style="color:#cb3349" > source keePer 🍃
+# <p align="center" style="color:#cb3349" > source zama 🍃
  
 # <p align="center" style="color: #14635c;" > 📣اقــوى ســورس على التليـكرام
 
 
 ***
 
-# <p align="center" style="color: #14635c;" > لتنصيب سورس كيبــر بكود واحد اتبع :
+# <p align="center" style="color: #14635c;" > لتنصيب سورس الزعامه بكود واحد اتبع :
  
 <br>🌀¦ افتح ترمنال واكتب <br>
 <br> `redis-server`<br>
