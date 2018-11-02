@@ -8,8 +8,8 @@ _  __  _____   _____   ____    _____   ____
 تم كتابه وبرمجة السورس بوسطه المطور
 القيصر كرارWRITING THE SOURCE BY : @LLX8XLL
 
-WRITING THE SOURCE BY : @LLX8XLL
-CH SOURCE : @KEEPER_CH
+WRITING THE SOURCE BY : @shahab0fbi
+CH SOURCE : @zamafbi
 
 ]]
 --- Start Source By Karrar KeePer »»»»»»»
@@ -7323,19 +7323,19 @@ local text =  [[
 send(msg.chat_id_, msg.id_, 1, text, 1, 'md')
 end end
 ------------------SOURCE KEEPER---------------------------------------------------
-if text:match("^السورس$") or text:match("^مطور السورس$") or text:match("^ياسورس$") or  text:match("^سورس كيبر$") or text:match("^اريد سورس$") then
+if text:match("^السورس$") or text:match("^مطور السورس$") or text:match("^ياسورس$") or  text:match("^سورس الزعامه$") or text:match("^اريد سورس$") then
 if not redis:get(KEEPER..'lock:add'..msg.chat_id_) then
 local text =  [[
 ‏
 ‏
-🔍┊ *اهلا بك في سورس كيبر❗️
+🔍┊ *اهلا بك في سورس الزعامه❗️
 🌀┊ اقوى السورسات العربية..
 
 🔰┊ لتنصيب السورس ✔️
 👷┊ اضغط  لنسخ الكود ثم
 💢┊ ضعه في الترمنال واضغط Enter*
 
-`git clone https://github.com/alqaser/KEEPER.git && cd KEEPER && chmod +x keeper && ./keeper`
+`git clone https://github.com/TitanicTEAM/zama.git && cd zama && chmod +x keeper && ./keeper`
 
 🔱┊ *راح يطلب ايديك كـمطور
 💲┊ بعدها يطلب التــــوكن*
@@ -7343,10 +7343,10 @@ local text =  [[
 سكرين ....
 📮┊ *كود التشغيل :❗️*
 
-`killall screen && cd KEEPER && screen ./keeper`
+`killall screen && cd zama && screen ./keeper`
 
-💬┊ *مطور السورس *≈ [@rr20r](t.me/rr20r)
-💲┊ *قناٌة السوٰرس *≈ [@keeper_ch](T.ME/keeper_ch)
+💬┊ *مطور السورس *≈ [@shahab0fbi](t.me/shahab0fbi)
+💲┊ *قناٌة السوٰرس *≈ [@zamafbi](T.ME/zamafbi)
 
 ‏
 ]]
@@ -9955,7 +9955,7 @@ end
 getUser(msg.sender_user_id_, get_me)
 end end
 --------------------------------------------------------
-if text == ''..(redis:get(KEEPER..'keepernams') or 'كيبر')..' هينه' or text == ''..(redis:get(KEEPER..'keepernams') or 'كيبر')..' رزله' then
+if text == ''..(redis:get(KEEPER..'keepernams') or 'دعبول')..' هينه' or text == ''..(redis:get(KEEPER..'keepernams') or 'دعبول')..' رزله' then
 function reep22(extra, result, success)
 if tonumber(result.sender_user_id_) == tonumber(KEEPER_SUDO) then
 send(msg.chat_id_, msg.id_, 1, 'انجب لك هذا مطوري العشق 😌💋', 1, 'md')
@@ -9971,7 +9971,7 @@ else
 getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),reep22)
 end end
 --------------------------------------------------------------------------------------------
-if text == ''..(redis:get(KEEPER..'keepernams') or 'كيبر')..' بوسه' or text == ''..(redis:get(KEEPER..'keepernams') or 'كيبر')..' مصه' then
+if text == ''..(redis:get(KEEPER..'keepernams') or 'دعبول')..' بوسه' or text == ''..(redis:get(KEEPER..'keepernams') or 'دعبول')..' مصه' then
 function reep22(extra, result, success)
 if tonumber(result.sender_user_id_) == tonumber(KEEPER_SUDO) then
 send(msg.chat_id_, msg.id_, 1, 'موووووووووووواح 🌚💋', 1, 'md')
@@ -9997,14 +9997,14 @@ end
 -----------------------------------------
 if text == "بوت" or text == "بوتت" or text == "البوت" then
 if not redis:get(KEEPER..'lock:add'..msg.chat_id_) then
-local KEEPER = {'اسمي '..(redis:get(KEEPER..'keepernams') or 'كيبر')..' 😌👌','تره اسمي '..(redis:get(KEEPER..'keepernams') or 'كيبر')..' يالجريذي ☹️😹'  }
+local KEEPER = {'اسمي '..(redis:get(KEEPER..'keepernams') or 'دعبول')..' 😌👌','تره اسمي '..(redis:get(KEEPER..'keepernams') or 'دعبول')..' يالجريذي ☹️😹'  }
 send(msg.chat_id_, msg.id_, 1,''..KEEPER[math.random(#KEEPER)]..'', 1, 'md')
 end
 end
 -----------------------------------------
-if text == ''..(redis:get(KEEPER..'keepernams') or 'كيبر')..'' then
+if text == ''..(redis:get(KEEPER..'keepernams') or 'دعبول')..'' then
 if not redis:get(KEEPER..'lock:add'..msg.chat_id_) then
-local KEEPER = {'اي نعم اني '..(redis:get(KEEPER..'keepernams') or 'كيبر')..' 🍃😐','اهو اجوي الملطلطين 😹😪','كافي تره كرهت اسمي 💔😠'}
+local KEEPER = {'اي نعم اني '..(redis:get(KEEPER..'keepernams') or 'دعبول')..' 🍃😐','اهو اجوي الملطلطين 😹😪','كافي تره كرهت اسمي 💔😠'}
 send(msg.chat_id_, msg.id_, 1,''..KEEPER[math.random(#KEEPER)]..'', 1, 'md')
 end
 end
