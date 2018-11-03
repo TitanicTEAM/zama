@@ -192,7 +192,7 @@ bot_id = sudos.Bot_ID ---id bot
 KEEPER = tonumber(_redis.Bot_ID)
 
 function Run()
-print('\27[93m>Developer:\27[39m'..' '..'@keeper_ch')
+print('\27[93m>Developer:\27[39m'..' '..'@zamafbi')
 end
 ------------------------boT ID   BY keePer ----------------------
 print(string.sub(_redis.Bot_ID,1,0))
@@ -427,9 +427,9 @@ _  __  _____   _____   ____    _____   ____
 ]].."\n\027[00m")
 print("\27[0;35m>>"..[[
 تم كتابه السورس بوسطه المطور
-القيصر كرار
-WRITING THE SOURCE BY : @LLX8XLL
-CH SOURCE : @keeper_ch
+شهاب الرشيد
+WRITING THE SOURCE BY : @shahab0fbi
+CH SOURCE : @zamafbi
 ]].."\n\027[00m")
 -----------------------function is_KP----------by keeper------------------------
 local is_KP = function(msg)
