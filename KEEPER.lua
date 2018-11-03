@@ -1016,23 +1016,23 @@ end
 --------------function retba---------------------------------
 local tmkeeper = function(msg)
 if is_KpiD(msg.sender_user_id_) then
-keeper  = "المطور 🌿"
+keeper  = "المطور 👨🏻‍💻"
 elseif is_sudoid(msg.sender_user_id_) then
-keeper = "المطور 🌿"
+keeper = "المطور 👨🏻‍💻"
 elseif is_admin(msg.sender_user_id_) then
-keeper = "الادمن 🐾"
+keeper = "الادمن 👷🏾"
 elseif is_vipmems(msg.sender_user_id_) then
 keeper = "مميز عام 🐾"
 elseif is_monshi(msg.sender_user_id_, msg.chat_id_) then
-keeper = "المنشىء 🌿"
+keeper = "المنشىء 👮🏻"
 elseif is_owner(msg.sender_user_id_, msg.chat_id_) then
-keeper = "المدير 🌿"
+keeper = "المدير 🗣"
 elseif is_momod(msg.sender_user_id_, msg.chat_id_) then
-keeper = "الادمن 🐾"
+keeper = "الادمن 👷🏾"
 elseif is_vipmem(msg.sender_user_id_, msg.chat_id_) then
 keeper = "عضو مميز 🌿 "
 else
-keeper = "عضو 🐾"
+keeper = "عضو 👮🏿‍♀️"
 end
 return keeper
 end
