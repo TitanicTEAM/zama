@@ -40,15 +40,15 @@
 
 
 🛡¦ الي عنده استفسار او مشكله <br>
-🛡¦ : [تواصل مع المطور 🍃](https://telegram.me/llX8Xll)<br>
+🛡¦ : [تواصل مع المطور 🍃](https://telegram.me/shahablll_bot)<br>
 
 
 # <p align="center"> رابــط  دعــم السورس
 
-  # <p align="center">[📨اضغط هنا للدخول الى المجموعه](https://t.me/keeper_ch)
+  # <p align="center">[📨اضغط هنا للدخول الى المجموعه](https://t.me/zamafbi)
   
-  [📨حسابــي](https://telegram.me/karrar_alqaser) <br>
+  [📨حسابــي](https://telegram.me/shahab0fbi) <br>
   
-  [٠ツقناتــي٠](https://telegram.me/keeper_ch) <br>
+  [٠ツقناتــي٠](https://telegram.me/zamafbi) <br>
   
-  [📨تواصل القناه](https://t.me/lqlxlqlbot) <br>
+  [📨تواصل القناه](https://t.me/shahablll_bot) <br>
