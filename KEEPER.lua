@@ -7838,20 +7838,20 @@ end
 redis:set(KEEPER.."Game:lock" .. msg.chat_id_, true)
 end
 if lockKeeper[2] == "الانلاين" then
-if not redis:get(KEEPER.."bot:tgservice:mute" .. msg.chat_id_) then
+if not redis:get(KEEPER.."bot:onlin:mute" .. msg.chat_id_) then
 send(msg.chat_id_, msg.id_, 1, "💬┊ تم قفل الانلاين \n🎟┊ الأمر بواسطه » "..tmkeeper(msg).."\n ‏ ", 1, "md")
 else
 send(msg.chat_id_, msg.id_, 1, "💬┊ الانلاين مقفوله سابقا \n🎟┊ الأمر بواسطه » "..tmkeeper(msg).."\n ‏ ", 1, "md")
 end
-redis:set(KEEPER.."bot:tgservice:mute" .. msg.chat_id_, true)
+redis:set(KEEPER.."bot:onlin:mute" .. msg.chat_id_, true)
 end
-if lockKeeper[2] == "الاشعارات" then
-if not redis:get(KEEPER.."tgservice:lock" .. msg.chat_id_) then
-send(msg.chat_id_, msg.id_, 1, "💬┊ تم قفل الاشعارات \n🎟┊ الأمر بواسطه » "..tmkeeper(msg).."\n ‏ ", 1, "md")
+if lockKeeper[2] == "البوست" then
+if not redis:get(KEEPER.."post:lock" .. msg.chat_id_) then
+send(msg.chat_id_, msg.id_, 1, "💬┊ تم قفل البوست \n🎟┊ الأمر بواسطه » "..tmkeeper(msg).."\n ‏ ", 1, "md")
 else
-send(msg.chat_id_, msg.id_, 1, "💬┊ الاشعارات مقفوله سابقا \n🎟┊ الأمر بواسطه » "..tmkeeper(msg).."\n ‏ ", 1, "md")
+send(msg.chat_id_, msg.id_, 1, "💬┊ البوست مقفوله سابقا \n🎟┊ الأمر بواسطه » "..tmkeeper(msg).."\n ‏ ", 1, "md")
 end
-redis:set(KEEPER.."tgservice:lock" .. msg.chat_id_, true)
+redis:set(KEEPER.."post:lock" .. msg.chat_id_, true)
 end
 if lockKeeper[2] == "الماركدون" then
 if not redis:get(KEEPER.."markdown:lock" .. msg.chat_id_) then
@@ -7965,7 +7965,7 @@ send(msg.chat_id_, msg.id_, 1, "💬┊ الانكليزيه مقفوله ساب
 end
 redis:set(KEEPER.."bot:english:mute" .. msg.chat_id_, true)
 end
-if lockKeeper[2] == "12" then
+if lockKeeper[2] == "الاشعارات" then
 if not redis:get(KEEPER.."bot:tgservice:mute" .. msg.chat_id_) then
 send(msg.chat_id_, msg.id_, 1, "💬┊ تم قفل الاشعارات \n🎟┊ الأمر بواسطه » "..tmkeeper(msg).."\n ‏ ", 1, "md")
 else
@@ -8119,12 +8119,12 @@ end
 redis:del(KEEPER.."Game:lock" .. msg.chat_id_)
 end
 if UNkeeper[2] == "الانلاين" then
-if redis:get(KEEPER.."bot:tgservice:mute" .. msg.chat_id_) then
+if redis:get(KEEPER.."bot:onlin:mute" .. msg.chat_id_) then
 send(msg.chat_id_, msg.id_, 1, "💬┊ تم فتح الانلاين \n🎟┊ الأمر بواسطه » "..tmkeeper(msg).."\n ‏ ", 1, "md")
 else
 send(msg.chat_id_, msg.id_, 1, "💬┊ الانلاين مفتوحه سابقا \n🎟┊ الأمر بواسطه » "..tmkeeper(msg).."\n ‏ ", 1, "md")
 end
-redis:del(KEEPER.."bot:tgservice:mute" .. msg.chat_id_)
+redis:del(KEEPER.."bot:onlin:mute" .. msg.chat_id_)
 end
 if UNkeeper[2] == "البوست" then
 if redis:get(KEEPER.."post:lock" .. msg.chat_id_) then
@@ -8247,7 +8247,7 @@ send(msg.chat_id_, msg.id_, 1, "💬┊ الانكليزيه مفتوحه ساب
 end
 redis:del(KEEPER.."bot:english:mute" .. msg.chat_id_)
 end
-if UNkeeper[2] == "12" then
+if UNkeeper[2] == "الاشعارات" then
 if redis:get(KEEPER.."bot:tgservice:mute" .. msg.chat_id_) then
 send(msg.chat_id_, msg.id_, 1, "💬┊ تم فتح الاشعارات \n🎟┊ الأمر بواسطه » "..tmkeeper(msg).."\n ‏ ", 1, "md")
 else
