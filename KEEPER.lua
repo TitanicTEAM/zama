@@ -7838,12 +7838,12 @@ end
 redis:set(KEEPER.."Game:lock" .. msg.chat_id_, true)
 end
 if lockKeeper[2] == "الانلاين" then
-if not redis:get(KEEPER.."bot:inline:mute" .. msg.chat_id_) then
+if not redis:get(KEEPER.."bot:tgservice:mute" .. msg.chat_id_) then
 send(msg.chat_id_, msg.id_, 1, "💬┊ تم قفل الانلاين \n🎟┊ الأمر بواسطه » "..tmkeeper(msg).."\n ‏ ", 1, "md")
 else
 send(msg.chat_id_, msg.id_, 1, "💬┊ الانلاين مقفوله سابقا \n🎟┊ الأمر بواسطه » "..tmkeeper(msg).."\n ‏ ", 1, "md")
 end
-redis:set(KEEPER.."bot:inline:mute" .. msg.chat_id_, true)
+redis:set(KEEPER.."bot:tgservice:mute" .. msg.chat_id_, true)
 end
 if lockKeeper[2] == "الاشعارات" then
 if not redis:get(KEEPER.."tgservice:lock" .. msg.chat_id_) then
@@ -8119,21 +8119,21 @@ end
 redis:del(KEEPER.."Game:lock" .. msg.chat_id_)
 end
 if UNkeeper[2] == "الانلاين" then
-if redis:get(KEEPER.."bot:inline:mute" .. msg.chat_id_) then
+if redis:get(KEEPER.."bot:tgservice:mute" .. msg.chat_id_) then
 send(msg.chat_id_, msg.id_, 1, "💬┊ تم فتح الانلاين \n🎟┊ الأمر بواسطه » "..tmkeeper(msg).."\n ‏ ", 1, "md")
 else
 send(msg.chat_id_, msg.id_, 1, "💬┊ الانلاين مفتوحه سابقا \n🎟┊ الأمر بواسطه » "..tmkeeper(msg).."\n ‏ ", 1, "md")
 end
-redis:del(KEEPER.."bot:inline:mute" .. msg.chat_id_)
+redis:del(KEEPER.."bot:tgservice:mute" .. msg.chat_id_)
 end
-if UNkeeper[2] == "الاشعارات" then
-if redis:get(KEEPER.."tgservice:lock" .. msg.chat_id_) then
-send(msg.chat_id_, msg.id_, 1, "💬┊ تم فتح الاشعارات \n🎟┊ الأمر بواسطه » "..tmkeeper(msg).."\n ‏ ", 1, "md")            
+if UNkeeper[2] == "البوست" then
+if redis:get(KEEPER.."post:lock" .. msg.chat_id_) then
+send(msg.chat_id_, msg.id_, 1, "💬┊ تم فتح البوست \n🎟┊ الأمر بواسطه » "..tmkeeper(msg).."\n ‏ ", 1, "md")            
 redis:del(KEEPER.."post:lock" .. msg.chat_id_)
 else
-send(msg.chat_id_, msg.id_, 1, "💬┊ الاشعارات مفتوح سابقا \n🎟┊ الأمر بواسطه » "..tmkeeper(msg).."\n ‏ ", 1, "md")
+send(msg.chat_id_, msg.id_, 1, "💬┊ البوست مفتوح سابقا \n🎟┊ الأمر بواسطه » "..tmkeeper(msg).."\n ‏ ", 1, "md")
 end
-redis:del(KEEPER.."tgservice:lock" .. msg.chat_id_)
+redis:del(KEEPER.."post:lock" .. msg.chat_id_)
 end
 if UNkeeper[2] == "الماركدون" then
 if redis:get(KEEPER.."markdown:lock" .. msg.chat_id_) then
