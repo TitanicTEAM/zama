@@ -7111,13 +7111,13 @@ end
 getUser(msg.sender_user_id_, get_me)
 end
 -----------------------------------------
-    if text:match("^(الساعه)$") or text:match("^(الوقت)$")  then
+  if text:match("^(الساعه)$") or text:match("^(الوقت)$")  then
   local url , res = https.request('https://sajad.gq/api/date/')
   if res ~= 200 then return end
   local jd = json:decode(url)
-  faeder = "📅 ⁞ التاريخ • "..jd.EnDate.WordOne.."\n🕐 ⁞ الساعه • "..jd.EnTime.Number..""
-  faederdx(msg.chat_id_, msg.id_, 1, faeder, 1, 'md')
- end
+  KEEPER = "📅 ⁞ التاريخ • "..jd.EnDate.WordOne.."\n🕐 ⁞ الساعه • "..jd.EnTime.Number..""
+  KEEPER(msg.chat_id_, msg.id_, 1, KEEPER, 1, 'md')
+  end
 -----------------------------------------  
 if text == 'حذف كليشه المطور' then
 if not is_KP(msg) then
