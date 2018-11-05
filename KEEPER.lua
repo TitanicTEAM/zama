@@ -7111,7 +7111,7 @@ end
 getUser(msg.sender_user_id_, get_me)
 end
 -----------------------------------------
-if MsgText[1] == "^وضع صوره للترحيب$" or MsgText[1]=="ضع صوره للترحيب 🌄" then
+if MsgText[1] == "^وضع صوره الترحيب (%d+)$" then
 redis:setex(boss..'welcom_ph:witting'..msg.sender_user_id_,300,true) 
 return'📭¦ حسننا عزيزي 🍁\n🌄 ¦ الان قم بارسال الصوره للترحيب \n🛠' 
 end
