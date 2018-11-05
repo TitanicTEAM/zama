@@ -5053,6 +5053,89 @@ send(msg.chat_id_, msg.id_, 1, "✺↓ تم مغادره المجموعــه �
 redis:srem(KEEPER.."bot:groups", msg.chat_id_)
 chat_leave(msg.chat_id_, bot_id)
 end
+--------------------------------------------
+
+if text == 'تفعيل رفع الادمن' and is_owner(msg.sender_user_id_, msg.chat_id_) then
+
+send(msg.chat_id_, msg.id_, 1, "💬┊ بواسطه » "..tmkeeper(msg).."\n🎟┊ تم تفعيل خاصية رفع الادمن\n ✓ ", 1, 'md')
+
+redis:del(KEEPER.."lock_addd"..msg.chat_id_)
+
+end
+
+if text == 'تعطيل رفع الادمن' and is_owner(msg.sender_user_id_, msg.chat_id_) then
+
+send(msg.chat_id_, msg.id_, 1, "💬┊ بواسطه » "..tmkeeper(msg).."\n🎟┊ تم تعطيل خاصية رفع الادمن\n ✓ ", 1, 'md')
+
+redis:set(KEEPER.."lock_addd"..msg.chat_id_, true)
+
+end
+
+-------------------------------------------------
+
+if text == 'تفعيل رفع المميز' and is_owner(msg.sender_user_id_, msg.chat_id_) then
+
+send(msg.chat_id_, msg.id_, 1, "💬┊ بواسطه » "..tmkeeper(msg).."\n🎟┊ تم تفعيل خاصية رفع المميز\n ✓ ", 1, 'md')
+
+redis:del(KEEPER.."lock_adddvip"..msg.chat_id_)
+
+end
+
+if text == 'تعطيل رفع المميز' and is_owner(msg.sender_user_id_, msg.chat_id_) then
+
+send(msg.chat_id_, msg.id_, 1, "💬┊ بواسطه » "..tmkeeper(msg).."\n🎟┊ تم تعطيل خاصية رفع المميز\n ✓ ", 1, 'md')
+
+redis:set(KEEPER.."lock_adddvip"..msg.chat_id_, true)
+
+end
+
+--------------------------------------------------------------------
+
+if is_owner(msg.sender_user_id_, msg.chat_id_) and idf:match("-100(%d+)") and text:match("^رفع ادمن بالتفاعل (%d+)$")  then
+
+local uuuu = { string.match(text, "^(رفع ادمن بالتفاعل) (%d+)$")}
+
+send(msg.chat_id_, msg.id_, 1, "⚜️┊ تم حفظ العدد *"..uuuu[2].."*\n💬┊ سيتم رفع العضو ادمن\n🚫┊اذا اثبت تفاعله\n✓",1, 'md')
+
+redis:set(KEEPER.."KEEPER_O" .. msg.chat_id_, uuuu[2])
+
+end
+
+local msgs = tonumber(redis:get(KEEPER.."msgs:"..msg.sender_user_id_..":"..msg.chat_id_))
+
+local get_keeper = tonumber(redis:get(KEEPER.."KEEPER_O" .. msg.chat_id_)) 
+
+if msgs == get_keeper and not redis:get(KEEPER.."lock_addd"..msg.chat_id_) then
+
+send(msg.chat_id_, msg.id_, 1, "💬┊ هذا العضو اثبت تفاعله\n🎟┊تم رفعه ادمن في المجموعه\n✓",  1, "md")
+
+redis:sadd(KEEPER..'bot:momod:'..msg.chat_id_, msg.sender_user_id_)
+
+end
+
+--------------------------------------------------------------------
+
+if is_owner(msg.sender_user_id_, msg.chat_id_) and idf:match("-100(%d+)") and text:match("^رفع مميز بالتفاعل (%d+)$")  then
+
+local uuuu = { string.match(text, "^(رفع مميز بالتفاعل) (%d+)$")}
+
+send(msg.chat_id_, msg.id_, 1, "⚜️┊ تم حفظ العدد *"..uuuu[2].."*\n💬┊ سيتم رفع العضو مميز\n🚫┊اذا اثبت تفاعله\n✓",1, 'md')
+
+redis:set(KEEPER.."KEEPER_OO" .. msg.chat_id_, uuuu[2])
+
+end
+
+local msgs = tonumber(redis:get(KEEPER.."msgs:"..msg.sender_user_id_..":"..msg.chat_id_))
+
+local get_keeper = tonumber(redis:get(KEEPER.."KEEPER_OO" .. msg.chat_id_)) 
+
+if msgs == get_keeper and not redis:get(KEEPER.."lock_adddvip"..msg.chat_id_) then
+
+send(msg.chat_id_, msg.id_, 1, "📌┊ هذا العضو اثبت تفاعله\n🌀┊تم رفعه عضو مميز في المجموعه\n✓",  1, "md")
+
+redis:sadd(KEEPER..'bot:vipmem:'..msg.chat_id_, msg.sender_user_id_)
+
+end     
 ------------------------------ADD vipmems BY Reply------------------------------------------------------------------
 if text:match("^رفع مميز عام$") and is_KP(msg) and msg.reply_to_message_id_ ~= 0  then
 function promote_by_reply(extra, result, success)
