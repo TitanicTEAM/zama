@@ -7111,13 +7111,10 @@ end
 getUser(msg.sender_user_id_, get_me)
 end
 -----------------------------------------
-  if text:match("^(الساعه)$") or text:match("^(الوقت)$")  then
-  local url , res = https.request('https://sajad.gq/api/date/')
-  if res ~= 200 then return end
-  local jd = json:decode(url)
-  KEEPER = "📅 ⁞ التاريخ • "..jd.EnDate.WordOne.."\n🕐 ⁞ الساعه • "..jd.EnTime.Number..""
-  KEEPER(msg.chat_id_, msg.id_, 1, KEEPER, 1, 'md')
-  end
+if MsgText[1] == "^وضع صوره للترحيب$" or MsgText[1]=="ضع صوره للترحيب 🌄" then
+redis:setex(boss..'welcom_ph:witting'..msg.sender_user_id_,300,true) 
+return'📭¦ حسننا عزيزي 🍁\n🌄 ¦ الان قم بارسال الصوره للترحيب \n🛠' 
+end
 -----------------------------------------  
 if text == 'حذف كليشه المطور' then
 if not is_KP(msg) then
