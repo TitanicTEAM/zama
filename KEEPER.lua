@@ -9283,7 +9283,7 @@ if is_momod(msg.sender_user_id_, msg.chat_id_) and idf:match("-100(%d+)") and te
 if not redis:get(KEEPER..'lock:add'..msg.chat_id_) then
 local txt = {string.match(text, "^(ضع اسم) (.*)$")}
 changetitle(msg.chat_id_, txt[2])
-send(msg.chat_id_, msg.id_, 1, "💬┊ بواسطه » "..tmkeeper(msg).."\n🎟┊ تم تغييــر اسم المجموعــه\n ✓ ", 1, 'md')
+send(msg.chat_id_, msg.id_, 1, "👨🏾‍🌾┊ اهلا عزيزي » "..tmkeeper(msg).."\n📡┊ تم تغير اسم المجموعه بنجاح\n  ✓ ", 1, 'md')
 
 end end
 ----------------LEAVE GP------------------------------------------------------------------------------
@@ -9291,7 +9291,7 @@ if text:match("^غادر (-%d+)$")  then
 if not redis:get(KEEPER..'lock:add'..msg.chat_id_) then
 local txt = { string.match(text, "^(غادر) (-%d+)$")}
 if not is_sudo(msg) then
-send(msg.chat_id_, msg.id_, 1, '💲┊ للمطوريـــــــن فقــــــــط', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '👨🏾‍🌾┊ اهلا عزيزي هذه الامر يخص المطور الاساسي فقط', 1, 'md')
 else
 local OwnerKP_ = redis:get(KEEPER.."Bot:KpOwnerBot")
 local user_info_ = redis:get(KEEPER.."user:Name" .. OwnerKP_)
@@ -9299,16 +9299,16 @@ local UserKeeper = user_info_
 if user_info_ then
 local leavegp = function(extra, result)
 if result.id_ then
-send(msg.chat_id_, msg.id_, 1, "🚺  المجموعــۿ : \n- " .. result.title_ .. "\n📛 تم اخراج البوت منها💯", 1, "md")
+send(msg.chat_id_, msg.id_, 1, "👨🏿‍🎓  المجموعه : \n- " .. result.title_ .. "\n📛 تم اخراج البوت منها💯", 1, "md")
 if redis:get(KEEPER.."lang:gp:" .. result.id_) then
-send(result.id_, 0, 1, "🌀┊  تم اخراج البوت 🎐\n🔱┊ راسل المطور للتفعيل 📮\n🔰┊ *المطور* : [" .. UserKeeper .. "]\n‏", 1, "md")
+send(result.id_, 0, 1, "👨🏾‍🌾┊  تم اخراج البوت 🎐\n👨🏻‍💻┊ راسل المطور للتفعيل 📮\n💻┊ *المطور* : [" .. UserKeeper .. "]\n‏", 1, "md")
 else
-send(result.id_, 0, 1, "🌀┊  تم اخراج البوت 🎐\n🔱┊ راسل المطور للتفعيل 📮\n🔰┊ *المطور* : [" .. UserKeeper .. "]\n‏", 1, "md")
+send(result.id_, 0, 1, "👨🏾‍🌾┊  تم اخراج البوت ✓\n👨🏻‍💻┊ راسل المطور للتفعيل 📮\n💻┊ *المطور* : [" .. UserKeeper .. "]\n‏", 1, "md")
 end
 chat_leave(result.id_, bot_id)
 redis:srem(KEEPER.."bot:groups", result.id_)
 else
-send(msg.chat_id_, msg.id_, 1, "🔹 لا توجد مجموعه مفعله ❗️", 1, "md")
+send(msg.chat_id_, msg.id_, 1, "👨🏾‍🌾 لا توجد مجموعه مفعله✓", 1, "md")
 end  end
 getChat(txt[2], leavegp)
 end end end end
@@ -9316,7 +9316,7 @@ end end end end
 if text:match("^معلومات المطور (%d+)") then
 local txt = {string.match(text, "^(معلومات المطور) (%d+)$")}
 if not is_KP(msg) then
-send(msg.chat_id_, msg.id_, 1, '💲┊ للمطور الاساسي فقــــــــط', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '👨🏾‍🌾┊ اهلا عزيزي هذه الامر يخص المطور الاساسي فقط', 1, 'md')
 else
 local get_data = function(extra, result)
 if result.id_ then
@@ -9332,23 +9332,22 @@ break
 end
 end end
 local susername = "@" .. result.username_ or ""
-local text = "*« معلومات المطور »*\n-----------------------\n🚫┊ معرفه : [" .. susername .. "]\n🔰┊ ايديه : "..result.id_.."\n🔱┊ اسمه : "..result.first_name_.."\n-----------------------\n✔️┊ *المجموعات التي ضافها *:\n"
+local text = "*« معلومات المطور »*\n-----------------------\n🎫┊ معرفه : [" .. susername .. "]\n🎟┊ ايديه : "..result.id_.."\n🗣┊ اسمه : "..result.first_name_.."\n-----------------------\n✔️┊ *المجموعات التي ضافها *:\n"
 for k, v in pairs(list) do
 text = text .. k .. " » `(" .. v .. ")`\n"
 end
 if #list == 0 then
-text = "*« معلومات المطور »*\n\n🚫┊ معرفه : [" .. susername .. "]\n🔰┊ ايديه : "..result.id_.."\n🔱┊ اسمه : "..result.first_name_.."\n※ لا توجد مجموعات مضافه⚜️ "
+text = "*« معلومات المطور »*\n\n🎟┊ معرفه : [" .. susername .. "]\n🎫┊ ايديه : "..result.id_.."\n🗣┊ اسمه : "..result.first_name_.."\n※ لا توجد مجموعات مضافه⏳ "
 end
 send_large_msg(msg.chat_id_, msg.id_, 1, text, 1, "md")
 else
-send(msg.chat_id_, msg.id_, 1, "🔎┊ العضو ليس من المطورين📍 ", 1, "md")
-end
+send(msg.chat_id_, msg.id_, 1, "👨🏾‍🌾┊ اهلا عزيزي هذه العضو ليس ضمن المطورين🗣 ", 1, "md")
 else
-send(msg.chat_id_, msg.id_, 1, "🔎┊ العضو ليس من المطورين📍 ", 1, "md")
+send(msg.chat_id_, msg.id_, 1, "👨🏾‍🌾┊ اهلا عزيزي هذه العضو ليس ضمن المطورين🗣 ", 1, "md")
 end
 end
 if redis:get(KEEPER.."bot:reloadingtime") then
-send(msg.chat_id_, msg.id_, 1, "🌀┊  تم تحديث البوت 🎐 ", 1, "md")
+send(msg.chat_id_, msg.id_, 1, "👨🏾‍🌾┊  تم تحديث البوت ✓ ", 1, "md")
 else
 getUser(txt[2], get_data)
 end end end
