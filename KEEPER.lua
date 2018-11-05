@@ -192,7 +192,7 @@ bot_id = sudos.Bot_ID ---id bot
 KEEPER = tonumber(_redis.Bot_ID)
 
 function Run()
-print('\27[93m>Developer:\27[39m'..' '..'@keeper_ch')
+print('\27[93m>Developer:\27[39m'..' '..'@zamafbi')
 end
 ------------------------boT ID   BY keePer ----------------------
 print(string.sub(_redis.Bot_ID,1,0))
@@ -7111,6 +7111,14 @@ end
 getUser(msg.sender_user_id_, get_me)
 end
 -----------------------------------------
+    if text:match("^(الساعه)$") or text:match("^(الوقت)$")  then
+  local url , res = https.request('https://sajad.gq/api/date/')
+  if res ~= 200 then return end
+  local jd = json:decode(url)
+  faeder = "📅 ⁞ التاريخ • "..jd.EnDate.WordOne.."\n🕐 ⁞ الساعه • "..jd.EnTime.Number..""
+  faederdx(msg.chat_id_, msg.id_, 1, faeder, 1, 'md')
+ end
+-----------------------------------------  
 if text == 'حذف كليشه المطور' then
 if not is_KP(msg) then
 send(msg.chat_id_, msg.id_, 1, '👨🏾‍🌾┊ هاذه الامرفقط یخص المطور الاساسي', 1, 'md')
