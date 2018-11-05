@@ -6084,6 +6084,23 @@ delete_msg(msg.chat_id_, {
 })
 delete_msg(msg.chat_id_, msgs)
 end end
+--------------------------------------------------------------------------------------
+
+if text == 'تفعيل الملصقات' and is_owner(msg.sender_user_id_, msg.chat_id_) then
+
+send(msg.chat_id_, msg.id_, 1, "💬┊ بواسطه » "..tmkeeper(msg).."\n🎟┊ تم تفعيل ردود الملصقات\n ✓ ", 1, 'md')
+
+redis:del(KEEPER.."lock_STCK"..msg.chat_id_)
+
+end
+
+if text == 'تعطيل الملصقات' and is_owner(msg.sender_user_id_, msg.chat_id_) then
+
+send(msg.chat_id_, msg.id_, 1, "💬┊ بواسطه » "..tmkeeper(msg).."\n🎟┊ تم تعطيل ردود الملصقات\n ✓ ", 1, 'md')
+
+redis:set(KEEPER.."lock_STCK"..msg.chat_id_, true)
+
+end     
 -------------------welcome on---------------------------------------------------------
 if text:match("^تفعيل الترحيب$") and is_momod(msg.sender_user_id_, msg.chat_id_) then
 redis:set(KEEPER..'status:welcome:'..msg.chat_id_,'enable')
