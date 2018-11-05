@@ -9276,7 +9276,7 @@ end end end
 if text:match("^ضع صوره") and is_owner(msg.sender_user_id_, msg.chat_id_) then
 if not redis:get(KEEPER..'lock:add'..msg.chat_id_) then
 redis:set(KEEPER..'bot:setphoto'..msg.chat_id_..':'..msg.sender_user_id_,true)
-send(msg.chat_id_, msg.id_, 1, '🌀┊ قم بارسال صوره الان 📤', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '👨🏾‍🌾┊ قم بارسال صوره الان 📤', 1, 'md')
 end end
 -----------------SET NAME MSG---------------------------------------------------------------------------------------
 if is_momod(msg.sender_user_id_, msg.chat_id_) and idf:match("-100(%d+)") and text:match("^ضع اسم (.*)$")  then
