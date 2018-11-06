@@ -9227,7 +9227,7 @@ if not is_KP(msg) then
 send(msg.chat_id_, msg.id_, 1, '💲┊ للمطور الاساسي فقــــــــط', 1, 'md')
 else
 os.execute('rm -rf KEEPER.lua') 
-os.execute('wget https://raw.githubusercontent.com/alqaser/KEEPER/master/KEEPER.lua') 
+os.execute('wget https://raw.githubusercontent.com/TitanicTEAM/zama/master/KEEPER.lua') 
 send(msg.chat_id_, msg.id_, 1, "💬┊ بواسطه » "..tmkeeper(msg).."\n🎟┊ تم تحديث السورس \n ✓ ", 1, 'md')
 dofile('KEEPER.lua')  
 io.popen("rm -rf ~/.telegram-cli/data/audio/*") 
